@@ -13,9 +13,6 @@ const Home = () => {
             <p className={styles.description}>
               Journey alongside vignerons, cellar masters, and the singular new voices of Spanish winemaking
             </p>
-            <p className={styles.tagline}>
-              Small groups. Unparalleled access. The most defiant wines in Spain — and the rebels who make them.
-            </p>
             <div className={styles.buttons}>
               <button className={styles.primaryButton}>
                 Explore Journeys

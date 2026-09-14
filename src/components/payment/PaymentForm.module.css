@@ -75,34 +75,83 @@
 
 .successMessage {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .successIcon {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2.5rem;
+  margin: 0 auto 2rem;
+  font-size: 3rem;
   color: #ffffff;
   font-weight: bold;
-  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .successTitle {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #333;
   margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .successText {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #666;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 2rem 0;
+}
+
+.continueButton {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.continueButton:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.continueButton:active {
+  transform: translateY(0);
 }

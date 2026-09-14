@@ -288,6 +288,27 @@
   transform: translateY(-2px);
 }
 
+.mobileLogoutButton {
+  background: #d4622a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0.5rem 1rem;
+}
+
+.mobileLogoutButton:hover {
+  background: #b8521f;
+  transform: translateY(-2px);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .navbar {

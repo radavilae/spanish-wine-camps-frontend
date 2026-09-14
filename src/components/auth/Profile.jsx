@@ -96,7 +96,7 @@ const Profile = () => {
             Make Payment
           </button>
           <button onClick={handleSignOut} className={styles.signOutButton}>
-            Sign Out
+            Log Out
           </button>
         </div>
       </div>

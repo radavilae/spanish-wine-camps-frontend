@@ -19,7 +19,7 @@ const Navbar = ({ activeSection, onScrollToSection }) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [authMode, setAuthMode] = useState('login')
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
   /**
    * Handle navigation with proper event handling
@@ -34,6 +34,16 @@ const Navbar = ({ activeSection, onScrollToSection }) => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const handleSignOut = async () => {
+    try {
+      await signOut()
+    } catch (error) {
+      console.error('Error signing out:', error.message)
+    } finally {
+      setIsMobileMenuOpen(false)
+    }
   }
 
   const navItems = [
@@ -125,11 +135,18 @@ const Navbar = ({ activeSection, onScrollToSection }) => {
             </li>
           ))}
           {user ? (
-            <li className={styles.mobileNavItem}>
-              <button className={styles.mobileAuthButton} onClick={() => setIsProfileModalOpen(true)}>
-                My Profile
-              </button>
-            </li>
+            <>
+              <li className={styles.mobileNavItem}>
+                <button className={styles.mobileAuthButton} onClick={() => setIsProfileModalOpen(true)}>
+                  My Profile
+                </button>
+              </li>
+              <li className={styles.mobileNavItem}>
+                <button className={styles.mobileLogoutButton} onClick={handleSignOut}>
+                  Log Out
+                </button>
+              </li>
+            </>
           ) : (
             <>
               <li className={styles.mobileNavItem}>
